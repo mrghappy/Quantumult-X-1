@@ -280,7 +280,7 @@ if (service == "YouTube") {
             let patt = new RegExp(`${timeline[i]}([^<]+)<\\/p>`)
             if (body.match(patt) && response.body.match(patt)) {
                 if (setting.line == "s") body = body.replace(patt, `${timeline[i]}$1\n${response.body.match(patt)[1].replace(/\n/g, "")}</p>`)
-                if (setting.line == "f") body = body.replace(patt, `${timeline[i]}${response.body.match(patt)[1]}\n$1</p>`)
+                if (setting.line == "f") body = body.replace(patt, `${timeline[i]}${response.body.match(patt)[1].replace(/\n/g, "")}\n$1</p>`)
             }
         }
 
