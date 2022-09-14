@@ -281,8 +281,8 @@ if (service == "YouTube") {
              
             if (body.match(patt) && response.body.match(patt)) {
                 timeline_ = timeline[i].replace(/\n/g, " ")
-                if (setting.line == "s") body = body.replace(patt, `${timeline_}$1\n${response.body.match(patt)[1]}</p>`)+ " s"
-                if (setting.line == "f") body = body.replace(patt, `${timeline_}${response.body.match(patt)[1]}\n$1</p>`)+ " f"
+                if (setting.line == "s") body ="s "+body.replace(patt, `${timeline_}$1\n${response.body.match(patt)[1]}</p>`) 
+                if (setting.line == "f") body ="f "+body.replace(patt, `${timeline_}${response.body.match(patt)[1]}\n$1</p>`)
             }
         }
 
